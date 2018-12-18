@@ -1,0 +1,18 @@
+body{
+    background: black;
+    color: white;
+}
+
+body>div>div{
+    border: 1px solid white;
+    padding: 5px;
+}
+
+body>div>div:hover{
+    background: darkgray;
+}
+
+#calc{
+    display: flex;
+    flex-direction: row;
+}
