@@ -1,0 +1,9 @@
+calculator js
+
+have an array of entries (Start as empty)
+have a var of total
+have a var of empty string
+
+create a function for id or class of button and on clicking the button have a series of conditions for it to run through
+
+one for:
