@@ -1,18 +1,68 @@
 body{
-    background: black;
+    background: #d1d1d1;
     color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body>div>div{
-    border: 1px solid white;
+div{
     padding: 5px;
 }
 
-body>div>div:hover{
+body>div>div>div:hover{
     background: darkgray;
+    cursor: pointer;
+}
+body>div>div>div{
+    background: #282828;
 }
 
 #calc{
-    display: flex;
-    flex-direction: row;
+    background: #444444;
+    position: absolute;
+    left: 38vw;
+    top: 7vh;
+    width: 300px;
+    height: 500px;
+
+    display: grid;
+    grid-template-rows: .2fr .5fr .5fr;
+    grid-gap: 5px;
+
+}
+
+#operator{
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    text-align: center;
+}
+
+#numbers{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    text-align: center;
+}
+
+#display{
+    background: black;
+    margin: 5px;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+#equals{
+    background: darkblue;
+}
+#equals:hover{
+    background: blue;
+}
+
+#clear{
+    background: crimson;
+}
+#clear:hover{
+    background: red;
 }
