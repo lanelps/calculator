@@ -51,6 +51,7 @@ body>div>div>div{
     font-family: 'Anonymous Pro', monospace;
     font-weight: 400;
     font-size: 36px;
+    overflow: hidden;
 }
 
 #equals{
