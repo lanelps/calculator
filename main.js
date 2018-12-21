@@ -1,27 +1,66 @@
 var arr = [];
 
-function insert(num){
-    $( "#display" ).text( num );
-    arr.push(num);
+function insert(num) {
+    if (arr[0] === '+' || arr[0] === '-' || arr[0] === '*' || arr[0] === '/' || arr[0] === '.') {
+        $("#display").text(num);
+        arr.push(num);
+        if (arr[0] === num) {
+            arr = [];
+            console.log(arr);
+        }
+    } else if (arr[0] === "0") {
+        $("#display").text("0");
+        arr = [];
+        console.log(arr);
+    } else {
+        $("#display").text(num);
+        arr.push(num);
+        console.log(arr);
+    }
+}
+
+//clear array
+function clean() {
+    $("#display").text("0");
+    arr = [];
     console.log(arr);
 }
 
-function clean() {
-    $( "#display" ).text( "0" );
-    //clear array
-    arr = [];
-    console.log(arr);
-  } 
+function equals() {
 
-  function equals() {
-    var output = eval(arr.join(''));
-    $( "#display" ).text( output );
-    arr = [];
-    console.log(arr);
-    console.log(output);
-  }
+    //checking if the first array item is not a number
+    if (arr.length === 1) {
+        if (arr[0] === '+' || arr[0] === '-' || arr[0] === '*' || arr[0] === '/' || arr[0] === '.') {
+            $("#display").text("error");
+            arr = [];
+            console.log(arr);
+        }
+    }
 
-  console.log(arr);
+    // rounds the number to 2 decimal places
+    if (arr.length > 11) {
+        var output = eval(arr.join(''));
+        console.log("output Long: " + output);
+        //    var outputRound = Math.round(output);
+        var outputRound = Math.round((output + 0.00001) * 100) / 100;
+
+        $("#display").text(outputRound);
+        arr = [];
+        console.log(arr);
+        console.log("output Rounded: " + outputRound);
+    } else {
+        var output = eval(arr.join(''));
+        $("#display").text(output);
+        arr = [];
+        console.log(arr);
+        console.log(output);
+    }
+
+    
+
+}
+
+console.log(arr);
 
 //   $( "#decimal" ).click(function() {
 //     $( "#display" ).text( "." );
@@ -29,17 +68,15 @@ function clean() {
 //     console.log(arr);
 //   });
 
-
-//   $( "#zero" ).click(function() {
-//     $( "#display" ).text( "0" );
-    
-//     if (arr[0] === "0"){
+// $("#zero").click(function () {
+//     $("#display").text("0");
+//     if (arr[0] === "0") {
 //         arr = [];
-//     } else { 
-//         arr.push("0"); 
+//     } else {
+//         arr.push("0");
 //     }
 //     console.log(arr);
-//   });
+// });
 
 //   $( "#one" ).click(function() {
 //     $( "#display" ).text( "1" );
