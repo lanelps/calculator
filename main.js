@@ -56,8 +56,6 @@ function equals() {
         console.log(output);
     }
 
-    
-
 }
 
 console.log(arr);
